@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="container">
+
+        <div class="card card-body">
+
+
+            <div class="card card-body bg-light">
+                <form method="post" action="https://entegrasyon.asseco-see.com.tr/fim/est3Dgate">
+                    <input type="hidden" name="clientid" value="{{clientid}}"/> 
+                    <input type="hidden" name="storetype" value="3d_pay_hosting" />
+                    <input type="hidden" name="hash" value="{{hashcode}}" /> 
+                    <input type="hidden" name="islemtipi" value="Auth" />
+                    <input type="hidden" name="amount" value="{{amount}}" /> 
+                    <input type="hidden" name="currency" value="949" /> 
+                    <input type="hidden" name="oid" value="{{oid}}" />
+                    <input type="hidden" name="okUrl" value="{{okurl}}"/> 
+                    <input type="hidden" name="failUrl" value="{{failurl}}" />
+                    <input type="hidden" name="callbackurl" value="{{callbackurl}}" />
+                    <input type="hidden" name="lang" value="tr" />
+                    <input type="hidden" name="rnd" value="{{rndstr}}" />
+
+                    <div class="form-group my-2">
+                        <label>Kredi Kartı No:</label>
+                        <input type="text" input name="pan" value="4508034508034509" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
+                        <label>Yıl:</label>
+                        <input type="text" input name="Ecom_Payment_Card_ExpDate_Year" value="21" class="form-control"> 
+                    </div>
+                    <div class="form-group my-2">
+                        <label>Ay:</label>
+                        <input type="text" input name="Ecom_Payment_Card_ExpDate_Month" value="12" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
+                        <label>Ay:</label>
+                        <input type="text" input name="cvv" value="000" class="form-control">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </form>
+            </div>
+
+
+
+            <table class="table">
+                <tr>
+                    <td>oid</td>
+                    <td>{{oid}}</td>
+                </tr>
+                <tr>
+                    <td>clientid</td>
+                    <td>{{clientid}}</td>
+                </tr>
+                <tr>
+                    <td>storetype</td>
+                    <td>{{storetype}}</td>
+                </tr>
+                <tr>
+                    <td>islemtipi</td>
+                    <td>{{islemtipi}}</td>
+                </tr>
+                <tr>
+                    <td>currency</td>
+                    <td>{{currency}}</td>
+                </tr>
+                <tr>
+                    <td>okurl</td>
+                    <td>{{okurl}}</td>
+                </tr>
+                <tr>
+                    <td>failurl</td>
+                    <td>{{failurl}}</td>
+                </tr>
+                <tr>
+                    <td>callbackurl</td>
+                    <td>{{callbackurl}}</td>
+                </tr>
+                <tr>
+                    <td>storekey</td>
+                    <td>{{storekey}}</td>
+                </tr>
+                <tr>
+                    <td>storekey</td>
+                    <td>{{storekey}}</td>
+                </tr>
+                <tr>
+                    <td>amount</td>
+                    <td>{{amount}}</td>
+                </tr>
+                <tr>
+                    <td>rndstr</td>
+                    <td>{{rndstr}}</td>
+                </tr>
+                <tr>
+                    <td>plaintext</td>
+                    <td>{{plaintext}}</td>
+                </tr>
+                <tr>
+                    <td>hashcode</td>
+                    <td>{{hashcode}}</td>
+                </tr>
+            </table>
+
+            
+
+
+        </div>
+
+    </div>
+
+
+{% endblock content %}
+    
